@@ -15,4 +15,5 @@
     <string name="manager">Manager</string>
     <string name="owner">Owner</string>
     <string name="chairman">Chairman</string>
+    <string name="slash">-</string>
 </resources>
