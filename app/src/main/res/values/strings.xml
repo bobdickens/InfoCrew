@@ -7,4 +7,12 @@
     <string name="founded">Founded</string>
     <string name="website">Website</string>
     <string name="name">Name</string>
+    <string name="venue">Venue</string>
+    <string name="overview">Overview</string>
+    <string name="capacity">Capacity</string>
+    <string name="staff">Staff</string>
+    <string name="corporate">Corporate</string>
+    <string name="manager">Manager</string>
+    <string name="owner">Owner</string>
+    <string name="chairman">Chairman</string>
 </resources>
