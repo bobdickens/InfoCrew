@@ -1,4 +1,4 @@
-package com.example.infocrew.screens
+package com.example.infocrew.presentation.screens
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
