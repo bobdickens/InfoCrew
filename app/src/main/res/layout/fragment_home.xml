@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/tint"
-    tools:context=".presentation.screens.HomeFragment">
+    tools:context=".presentation.screens.HomeFragment"
+    android:padding="5dp">
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,20 +21,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="20dp">
+            >
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/home_card_overview"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="15dp"
+                android:layout_margin="5dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/tint_avangard"
                     android:padding="13dp"
-                    android:scrollbarSize="30sp">
+                    android:scrollbarSize="10sp"
+                    >
 
 
                     <TextView
@@ -187,7 +190,8 @@
                 android:layout_height="130dp"
 
                 android:layout_marginTop="8dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="15dp"
+                android:layout_margin="5dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -268,9 +272,8 @@
                 android:id="@+id/home_card_staff"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-
-                android:layout_marginTop="8dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="15dp"
+                android:layout_margin="5dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -334,8 +337,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
 
-                android:layout_marginTop="8dp"
-                app:cardCornerRadius="10dp">
+                android:layout_margin="5dp"
+                app:cardCornerRadius="15dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
