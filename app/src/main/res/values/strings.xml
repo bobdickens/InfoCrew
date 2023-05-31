@@ -16,4 +16,9 @@
     <string name="owner">Owner</string>
     <string name="chairman">Chairman</string>
     <string name="slash">-</string>
+    <string name="home">Home</string>
+    <string name="fixtires">Fixtires</string>
+    <string name="results">Results</string>
+    <string name="league">League</string>
+    <string name="players">Players</string>
 </resources>

@@ -20,4 +20,9 @@ lateinit var binding: FragmentHomeBinding
         return binding.root
     }
 
+    companion object {
+        @JvmStatic
+        fun newInstance() = HomeFragment()
+    }
+
 }

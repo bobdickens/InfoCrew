@@ -19,5 +19,10 @@ private lateinit var binding: FragmentFixturesBinding
         return binding.root
     }
 
+    companion object {
+        @JvmStatic
+        fun newInstance() = FixturesFragment()
+    }
+
 
 }

@@ -20,4 +20,9 @@ class ResultsFragment : Fragment() {
         return binding.root
     }
 
+    companion object {
+        @JvmStatic
+        fun newInstance() = ResultsFragment()
+    }
+
 }

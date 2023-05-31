@@ -18,4 +18,9 @@ private lateinit var binding: FragmentPlayersBinding
         return binding.root
     }
 
+    companion object {
+        @JvmStatic
+        fun newInstance() = PlayersFragment()
+    }
+
 }

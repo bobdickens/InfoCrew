@@ -11,4 +11,5 @@
     <color name="tint">#2C2C2C</color>
     <color name="tint_line">#818181</color>
     <color name="tint_avangard">#434242</color>
+    <color name="color_orange">#FF5722</color>
 </resources>
