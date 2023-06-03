@@ -19,9 +19,9 @@
             android:orientation="vertical"
             >
             <androidx.cardview.widget.CardView
-                android:id="@+id/home_card_overview"
+                android:id="@+id/home_card_overview1"
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
+                android:layout_height="wrap_content"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="5dp">
 
@@ -33,8 +33,94 @@
                     android:scrollbarSize="10sp">
 
 
+                    <TextView
+                        android:id="@+id/textView101"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="P"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view51"
+                        app:layout_constraintEnd_toEndOf="@+id/view1"
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                    <TextView
+                        android:id="@+id/textView161"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="L"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view51"
+                        app:layout_constraintEnd_toStartOf="@+id/textView121"
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                    <TextView
+                        android:id="@+id/textView171"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="D"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view51"
+                        app:layout_constraintEnd_toStartOf="@+id/textView161"
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                    <TextView
+                        android:id="@+id/textView191"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="D"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view51"
+                        app:layout_constraintEnd_toStartOf="@+id/textView181"
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                    <TextView
+                        android:id="@+id/textView181"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="P"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view51"
+                        app:layout_constraintEnd_toStartOf="@+id/textView171"
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                    <TextView
+                        android:id="@+id/textView121"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="+/-"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view51"
+                        app:layout_constraintEnd_toStartOf="@+id/textView101"
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/view51"
+                        tools:listitem="@layout/legaue_item" />
+
+                    <TextView
+                        android:id="@+id/textView91"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="46dp"
+                        android:text="Team"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view51"
+                        app:layout_constraintStart_toStartOf="@+id/view1"
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
                     <View
-                        android:id="@+id/view"
+                        android:id="@+id/view1"
                         android:layout_width="match_parent"
                         android:layout_height="1sp"
                         android:layout_marginTop="40dp"
@@ -44,27 +130,17 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/view5"
+                        android:id="@+id/view51"
                         android:layout_width="match_parent"
                         android:layout_height="1sp"
                         android:layout_marginTop="35dp"
                         android:background="@color/tint"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/view" />
-
-                    <View
-                        android:id="@+id/view6"
-                        android:layout_width="match_parent"
-                        android:layout_height="1sp"
-                        android:layout_marginTop="24dp"
-                        android:background="@color/tint"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/view5" />
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
 
                     <TextView
-                        android:id="@+id/tv_name_crew"
+                        android:id="@+id/tv_name_crew1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/championship_group"
@@ -73,48 +149,11 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="5dp"
-                        android:src="@drawable/dundeeunited"
-                        app:layout_constraintStart_toEndOf="@+id/textView"
-                        app:layout_constraintTop_toBottomOf="@+id/view5" />
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="2dp"
-                        android:text="1"
-                        android:textColor="@color/text_tint"
-                        app:layout_constraintStart_toStartOf="@+id/view5"
-                        app:layout_constraintTop_toBottomOf="@+id/view5" />
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="2dp"
-                        android:text="Златовласые пидарасы"
-                        android:textColor="@color/text_tint"
-                        app:layout_constraintStart_toEndOf="@+id/imageView2"
-                        app:layout_constraintTop_toBottomOf="@+id/view5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/view6"
-                        tools:listitem="@layout/legaue_item"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
+
+
         </LinearLayout>
 
 

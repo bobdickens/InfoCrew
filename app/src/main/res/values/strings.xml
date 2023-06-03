@@ -22,4 +22,12 @@
     <string name="league">League</string>
     <string name="players">Players</string>
     <string name="championship_group">Championship Group</string>
+    <string name="relegation_group">Relegation Group</string>
+    <string name="team">Team</string>
+    <string name="plusAndMin">+/-</string>
+    <string name="p">P</string>
+    <string name="d">D</string>
+    <string name="D">D</string>
+    <string name="l">L</string>
+    <string name="P">P</string>
 </resources>
