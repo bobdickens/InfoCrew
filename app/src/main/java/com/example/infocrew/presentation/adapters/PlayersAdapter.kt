@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.infocrew.R
 import com.example.infocrew.data.json.PlayerX
 import com.example.infocrew.databinding.PlayersItemBinding
+import com.squareup.picasso.Picasso
 
 class PlayersAdapter:  ListAdapter<PlayerX, PlayersAdapter.Holder>(Comparator()){
     class Holder(view: View) : RecyclerView.ViewHolder(view){
@@ -18,6 +19,7 @@ class PlayersAdapter:  ListAdapter<PlayerX, PlayersAdapter.Holder>(Comparator())
             namePlayers.text = item.name
             playerRole.text = item.role
             playerArea.text = item.nation
+            Picasso.get().load(item.face).into(imageFace)
         }
     }
 

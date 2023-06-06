@@ -88,8 +88,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun bind()= with(binding){
        model.liveDataList.observe(this@MainActivity){
-           globalName.text = it[1].global_crew.name
-           Picasso.get().load(it[1].global_crew.logo).into(globalLogo)
+           globalName.text = it[0].global_crew.name
+           Picasso.get().load(it[0].global_crew.logo).into(globalLogo)
        }
     }
 

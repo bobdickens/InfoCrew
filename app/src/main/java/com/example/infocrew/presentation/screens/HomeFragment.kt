@@ -25,18 +25,24 @@ private val model: MainViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bind()
+        val index = 0
+        bind(index)
 
 
     }
 
-    private fun bind()= with(binding){
+    private fun bind(index: Int)= with(binding){
         model.liveDataList.observe(viewLifecycleOwner){
-            tvNameOverview.text = it[1].global_crew.name
-            tvFullNameOverview.text = it[1].global_crew.full_name
-            tvNicknameOverview.text = it[1].global_crew.nickname
-            tvFoundedOverview.text = it[1].global_crew.founded
-            tvWebsiteOverview.text = it[1].global_crew.website
+            tvNameOverview.text = it[index].global_crew.name
+            tvFullNameOverview.text = it[index].global_crew.full_name
+            tvNicknameOverview.text = it[index].global_crew.nickname
+            tvFoundedOverview.text = it[index].global_crew.founded
+            tvWebsiteOverview.text = it[index].global_crew.website
+            tvNameVenue.text = it[index].global_crew.venue_name
+            tvCapacityVenue.text = it[index].global_crew.venue_capacity
+            tvManagerStaff.text = it[index].global_crew.staff_manager
+            tvOwnerCorporate.text = it[index].global_crew.corporate_owner
+            tvChairmanCorporate.text = it[index].global_crew.corporate_chairman
         }
     }
     companion object {
