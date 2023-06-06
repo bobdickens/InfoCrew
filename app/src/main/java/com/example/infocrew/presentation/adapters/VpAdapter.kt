@@ -1,4 +1,4 @@
-package com.example.infocrew.data
+package com.example.infocrew.presentation.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

@@ -101,7 +101,7 @@
         <View
             android:id="@+id/view5"
             android:layout_width="match_parent"
-            android:layout_height="1sp"
+            android:layout_height="@dimen/view_line"
             android:background="@color/tint"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

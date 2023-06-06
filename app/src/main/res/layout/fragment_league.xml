@@ -121,7 +121,7 @@
                     <View
                         android:id="@+id/view"
                         android:layout_width="match_parent"
-                        android:layout_height="1sp"
+                        android:layout_height="@dimen/view_line"
                         android:layout_marginTop="40dp"
                         android:background="@color/tint_line"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -185,7 +185,7 @@
                         android:text="@string/l"
                         android:textColor="@color/text_tint"
                         app:layout_constraintBottom_toTopOf="@+id/view51"
-                        app:layout_constraintEnd_toStartOf="@+id/textView121"
+                        app:layout_constraintEnd_toStartOf="@+id/textView1211"
                         app:layout_constraintTop_toBottomOf="@+id/view1" />
 
                     <TextView
@@ -222,7 +222,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/view1" />
 
                     <TextView
-                        android:id="@+id/textView121"
+                        android:id="@+id/textView1211"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -277,6 +277,140 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/relegation_group"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/home_card_overview11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="5dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/tint_avangard"
+                    android:padding="13dp"
+                    android:scrollbarSize="10sp">
+
+
+                    <TextView
+                        android:id="@+id/textView1011"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="P"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view511"
+                        app:layout_constraintEnd_toEndOf="@+id/view11"
+                        app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+                    <TextView
+                        android:id="@+id/textView1611"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="L"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view511"
+                        app:layout_constraintEnd_toStartOf="@+id/textView12111"
+                        app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+                    <TextView
+                        android:id="@+id/textView1711"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="D"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view511"
+                        app:layout_constraintEnd_toStartOf="@+id/textView1611"
+                        app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+                    <TextView
+                        android:id="@+id/textView1911"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="D"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view511"
+                        app:layout_constraintEnd_toStartOf="@+id/textView1811"
+                        app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+                    <TextView
+                        android:id="@+id/textView1811"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="P"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view511"
+                        app:layout_constraintEnd_toStartOf="@+id/textView1711"
+                        app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+                    <TextView
+                        android:id="@+id/textView12111"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="+/-"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view511"
+                        app:layout_constraintEnd_toStartOf="@+id/textView1011"
+                        app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/view511"
+                        tools:listitem="@layout/legaue_item" />
+
+                    <TextView
+                        android:id="@+id/textView911"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="46dp"
+                        android:text="Team"
+                        android:textColor="@color/text_tint"
+                        app:layout_constraintBottom_toTopOf="@+id/view511"
+                        app:layout_constraintStart_toStartOf="@+id/view11"
+                        app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+                    <View
+                        android:id="@+id/view11"
+                        android:layout_width="match_parent"
+                        android:layout_height="1sp"
+                        android:layout_marginTop="40dp"
+                        android:background="@color/tint_line"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view511"
+                        android:layout_width="match_parent"
+                        android:layout_height="1sp"
+                        android:layout_marginTop="35dp"
+                        android:background="@color/tint"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+                    <TextView
+                        android:id="@+id/tv_name_crew11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/premiership"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         app:layout_constraintStart_toStartOf="parent"
