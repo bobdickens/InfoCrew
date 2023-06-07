@@ -70,7 +70,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:text="@string/d"
+                        android:text="P"
                         android:textColor="@color/text_tint"
                         app:layout_constraintBottom_toTopOf="@+id/view5"
                         app:layout_constraintEnd_toStartOf="@+id/textView18"
@@ -81,7 +81,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:text="@string/p"
+                        android:text="W"
                         android:textColor="@color/text_tint"
                         app:layout_constraintBottom_toTopOf="@+id/view5"
                         app:layout_constraintEnd_toStartOf="@+id/textView17"
@@ -99,13 +99,14 @@
                         app:layout_constraintTop_toBottomOf="@+id/view" />
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/view5"
-                        tools:listitem="@layout/legaue_item" />
+                        tools:listitem="@layout/league_item" />
 
                     <TextView
                         android:id="@+id/textView9"
@@ -239,7 +240,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/view51"
-                        tools:listitem="@layout/legaue_item" />
+                        tools:listitem="@layout/league_item" />
 
                     <TextView
                         android:id="@+id/textView91"
@@ -373,7 +374,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/view511"
-                        tools:listitem="@layout/legaue_item" />
+                        tools:listitem="@layout/league_item" />
 
                     <TextView
                         android:id="@+id/textView911"

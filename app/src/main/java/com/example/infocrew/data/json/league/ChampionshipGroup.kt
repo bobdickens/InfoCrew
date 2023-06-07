@@ -1,6 +1,6 @@
-package com.example.infocrew.data.json
+package com.example.infocrew.data.json.league
 
-data class RelegationGroup(
+data class ChampionshipGroup(
     val d: String,
     val l: String,
     val logo: String,

@@ -1,4 +1,4 @@
-package com.example.infocrew.data.json
+package com.example.infocrew.data.json.league
 
 data class Premiership(
     val d: String,

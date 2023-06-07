@@ -11,40 +11,40 @@
         android:background="@color/tint_avangard">
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/tv_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="D"
             android:textColor="@color/text_tint"
             app:layout_constraintBottom_toTopOf="@+id/view5"
-            app:layout_constraintEnd_toStartOf="@+id/textView21"
+            app:layout_constraintEnd_toStartOf="@+id/tv_w"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/tv_w"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="P"
             android:textColor="@color/text_tint"
             app:layout_constraintBottom_toTopOf="@+id/view5"
-            app:layout_constraintEnd_toStartOf="@+id/textView22"
+            app:layout_constraintEnd_toStartOf="@+id/tv_d"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/tv_d"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="D"
             android:textColor="@color/text_tint"
             app:layout_constraintBottom_toTopOf="@+id/view5"
-            app:layout_constraintEnd_toStartOf="@+id/textView23"
+            app:layout_constraintEnd_toStartOf="@+id/tv_l"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/tv_l"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -52,22 +52,22 @@
             android:text="L"
             android:textColor="@color/text_tint"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView24"
+            app:layout_constraintEnd_toStartOf="@+id/tv_plus"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView24"
+            android:id="@+id/tv_plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="+/-"
             android:textColor="@color/text_tint"
             app:layout_constraintBottom_toTopOf="@+id/view5"
-            app:layout_constraintEnd_toStartOf="@+id/textView25"
+            app:layout_constraintEnd_toStartOf="@+id/tv_p2"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/tv_p2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -78,22 +78,21 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Златовласые пидарасы"
             android:textColor="@color/text_tint"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintStart_toEndOf="@+id/iv_logo"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/iv_logo"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginStart="8dp"
-            android:src="@drawable/dundeeunited"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toTopOf="parent" />

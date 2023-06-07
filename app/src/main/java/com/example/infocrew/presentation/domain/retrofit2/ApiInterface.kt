@@ -1,6 +1,7 @@
 package com.example.infocrew.presentation.domain.retrofit2
 
 import com.example.infocrew.data.json.GlobalCrew
+import com.example.infocrew.data.json.league.League
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,6 +11,9 @@ interface ApiInterface {
 
     @GET("crew.json")
     fun getCrew() : Call<GlobalCrew>
+
+    @GET("league.json")
+    fun getLeague() : Call<League>
 
     companion object {
 

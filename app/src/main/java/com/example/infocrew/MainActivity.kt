@@ -12,6 +12,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.infocrew.data.json.Crew
 import com.example.infocrew.data.json.GlobalCrew
+import com.example.infocrew.data.json.league.League
 import com.example.infocrew.presentation.adapters.VpAdapter
 import com.example.infocrew.databinding.ActivityMainBinding
 import com.example.infocrew.presentation.domain.MainViewModel
@@ -52,23 +53,39 @@ class MainActivity : AppCompatActivity() {
         tabFunc()
 //        requestCrew( applicationContext)
         responseCrew()
+        responseLeague()
         bind()
 
 
 
     }
+    private fun responseLeague(){
 
+        val apiInterface = ApiInterface.create().getLeague()
+
+        apiInterface.enqueue( object : Callback<League> {
+            override fun onResponse(call: Call<League>, response: Response<League>) {
+
+                if(response.body() != null)
+                    model.liveDataLeague.value = response.body()
+                Log.d("Retrofit League", response.body().toString())
+            }
+
+            override fun onFailure(call: Call<League>, t: Throwable) {
+
+            }
+        })
+
+    }
     private fun responseCrew(){
 
         val apiInterface = ApiInterface.create().getCrew()
 
-        //apiInterface.enqueue( Callback<List<Movie>>())
         apiInterface.enqueue( object : Callback<GlobalCrew> {
             override fun onResponse(call: Call<GlobalCrew>, response: Response<GlobalCrew>) {
 
                 if(response.body() != null)
                     model.liveDataList.value = response.body()
-                //recyclerAdapter.setMovieListItems(response.body()!!)
                     Log.d("Retrofit", "${response.body()}")
             }
 
