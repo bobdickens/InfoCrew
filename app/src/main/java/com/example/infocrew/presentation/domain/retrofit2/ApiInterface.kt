@@ -1,4 +1,4 @@
-package com.example.infocrew.domain.retrofit2
+package com.example.infocrew.presentation.domain.retrofit2
 
 import com.example.infocrew.data.json.GlobalCrew
 import retrofit2.Call

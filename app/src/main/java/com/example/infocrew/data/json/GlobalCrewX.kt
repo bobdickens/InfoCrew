@@ -15,5 +15,6 @@ data class GlobalCrewX(
     val staff_manager: String,
     val venue_capacity: String,
     val venue_name: String,
-    val website: String
+    val website: String,
+    val fixtures: List<Fixtures>
 )

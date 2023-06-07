@@ -1,4 +1,4 @@
-package com.example.infocrew.domain
+package com.example.infocrew.presentation.domain
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.infocrew.R
 import com.example.infocrew.databinding.FragmentHomeBinding
-import com.example.infocrew.domain.MainViewModel
+import com.example.infocrew.presentation.domain.MainViewModel
 
 class HomeFragment : Fragment() {
 lateinit var binding: FragmentHomeBinding

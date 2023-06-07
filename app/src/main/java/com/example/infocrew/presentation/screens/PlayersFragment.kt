@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.infocrew.R
 import com.example.infocrew.data.json.PlayerX
 import com.example.infocrew.databinding.FragmentPlayersBinding
-import com.example.infocrew.domain.MainViewModel
+import com.example.infocrew.presentation.domain.MainViewModel
 import com.example.infocrew.presentation.adapters.PlayersAdapter
 
 class PlayersFragment : Fragment() {
@@ -43,8 +43,6 @@ class PlayersFragment : Fragment() {
             rv.adapter = adapter
             adapter.submitList(list)
         }
-
-
     }
 
     companion object {

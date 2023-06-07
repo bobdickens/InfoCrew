@@ -14,8 +14,8 @@ import com.example.infocrew.data.json.Crew
 import com.example.infocrew.data.json.GlobalCrew
 import com.example.infocrew.presentation.adapters.VpAdapter
 import com.example.infocrew.databinding.ActivityMainBinding
-import com.example.infocrew.domain.MainViewModel
-import com.example.infocrew.domain.retrofit2.ApiInterface
+import com.example.infocrew.presentation.domain.MainViewModel
+import com.example.infocrew.presentation.domain.retrofit2.ApiInterface
 import com.example.infocrew.presentation.screens.FixturesFragment
 import com.example.infocrew.presentation.screens.HomeFragment
 import com.example.infocrew.presentation.screens.LeagueFragment
