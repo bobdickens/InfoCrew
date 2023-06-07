@@ -7,17 +7,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.infocrew.R
-import com.example.infocrew.data.json.Fixtures
-import com.example.infocrew.data.json.PlayerX
+import com.example.infocrew.data.json.Fixture
 import com.example.infocrew.databinding.FixturesItemBinding
-import com.example.infocrew.databinding.PlayersItemBinding
 import com.squareup.picasso.Picasso
 
-class FixturesAdapter: ListAdapter<Fixtures, FixturesAdapter.Holder>(Comparator()){
+class FixturesAdapter: ListAdapter<Fixture, FixturesAdapter.Holder>(Comparator()){
     class Holder(view: View) : RecyclerView.ViewHolder(view){
         val binding = FixturesItemBinding.bind(view)
 
-        fun bind (item: Fixtures) = with(binding){
+        fun bind (item: Fixture) = with(binding){
             tvNameCrew.text = item.name_crew
             tvDate.text = item.date
             tvLegaue.text = item.league
@@ -25,13 +23,13 @@ class FixturesAdapter: ListAdapter<Fixtures, FixturesAdapter.Holder>(Comparator(
         }
     }
 
-    class Comparator : DiffUtil.ItemCallback<Fixtures>(){
-        override fun areItemsTheSame(oldItem: Fixtures, newItem: Fixtures): Boolean {
+    class Comparator : DiffUtil.ItemCallback<Fixture>(){
+        override fun areItemsTheSame(oldItem: Fixture, newItem: Fixture): Boolean {
             return  oldItem == newItem
 
         }
 
-        override fun areContentsTheSame(oldItem: Fixtures, newItem: Fixtures): Boolean {
+        override fun areContentsTheSame(oldItem: Fixture, newItem: Fixture): Boolean {
             return oldItem == newItem
         }
 

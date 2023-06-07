@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.infocrew.R
+import com.example.infocrew.data.json.Fixture
 import com.example.infocrew.databinding.FixturesItemBinding
 import com.example.infocrew.databinding.FragmentFixturesBinding
 import com.example.infocrew.presentation.adapters.FixturesAdapter
@@ -16,8 +17,8 @@ import com.example.infocrew.presentation.adapters.PlayersAdapter
 import com.example.infocrew.presentation.domain.MainViewModel
 
 class FixturesFragment : Fragment() {
-private lateinit var binding: FragmentFixturesBinding
-private val model: MainViewModel by activityViewModels()
+    private lateinit var binding: FragmentFixturesBinding
+    private val model: MainViewModel by activityViewModels()
     private lateinit var adapter: FixturesAdapter
 
     override fun onCreateView(
@@ -30,12 +31,16 @@ private val model: MainViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initRcView()
     }
 
     private fun initRcView() = with(binding) {
         model.liveDataList.observe(viewLifecycleOwner){
             val list = it[0].fixtures
-            Log.d("Recycler Test", it[1].fixtures.toString())
+            Log.d("Recycler Test Fixtures", it[0].fixtures.toString())
+            val list2 = listOf(
+                Fixture("test", "pizdex", "Nahuo", "Zalupa")
+            )
 
             rv.layoutManager = LinearLayoutManager(activity)
             adapter = FixturesAdapter()

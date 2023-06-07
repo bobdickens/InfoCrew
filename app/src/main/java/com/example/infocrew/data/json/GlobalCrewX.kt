@@ -11,10 +11,8 @@ data class GlobalCrewX(
     val next_match_date: String,
     val next_match_name: String,
     val nickname: String,
-    val players: List<PlayerX>,
     val staff_manager: String,
     val venue_capacity: String,
     val venue_name: String,
-    val website: String,
-    val fixtures: List<Fixtures>
+    val website: String
 )

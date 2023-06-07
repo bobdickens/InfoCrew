@@ -17,8 +17,8 @@ import com.example.infocrew.presentation.adapters.PlayersAdapter
 
 class PlayersFragment : Fragment() {
     private lateinit var binding: FragmentPlayersBinding
-    private lateinit var adapter: PlayersAdapter
     private val model: MainViewModel by activityViewModels()
+    private lateinit var adapter: PlayersAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

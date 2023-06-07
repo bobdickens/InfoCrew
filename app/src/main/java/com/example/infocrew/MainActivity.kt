@@ -90,6 +90,7 @@ class MainActivity : AppCompatActivity() {
        model.liveDataList.observe(this@MainActivity){
            globalName.text = it[0].global_crew.name
            Picasso.get().load(it[0].global_crew.logo).into(globalLogo)
+           Log.d("Retrofit2", it[0].fixtures.toString())
        }
     }
 
