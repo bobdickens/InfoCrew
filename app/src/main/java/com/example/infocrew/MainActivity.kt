@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         tabFunc()
-//        requestCrew( applicationContext)
         responseCrew()
         responseLeague()
         bind()
@@ -83,7 +82,6 @@ class MainActivity : AppCompatActivity() {
 
         apiInterface.enqueue( object : Callback<GlobalCrew> {
             override fun onResponse(call: Call<GlobalCrew>, response: Response<GlobalCrew>) {
-
                 if(response.body() != null)
                     model.liveDataList.value = response.body()
                     Log.d("Retrofit", "${response.body()}")
@@ -112,42 +110,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-//    private fun requestCrew(context: Context){
-//        val url = "http://167.235.200.159/4/json/crew.json"
-//        val queue = Volley.newRequestQueue(context)
-//        val request = StringRequest(
-//            Request.Method.GET, url, {
-//                result -> parseCrew(result)
-//            },
-//            {
-//                error -> Log.d("Volley", "Error request $error")
-//            }
-//        )
-//        queue.add(request)
-//
-//    }
-
-//    private fun parseCrew (result: String) {
-//        val mainObject = JSONObject(result)
-//        val item = Crew(
-//            mainObject.getJSONObject("global_crew").getString("name"),
-//            mainObject.getJSONObject("global_crew").getString("logo"),
-//            mainObject.getJSONObject("global_crew").getString("full_name"),
-//            mainObject.getJSONObject("global_crew").getString("nickname"),
-//            mainObject.getJSONObject("global_crew").getString("founded"),
-//            mainObject.getJSONObject("global_crew").getString("website"),
-//            mainObject.getJSONObject("global_crew").getString("next_match_name"),
-//            mainObject.getJSONObject("global_crew").getString("league"),
-//            mainObject.getJSONObject("global_crew").getString("next_match_date"),
-//            mainObject.getJSONObject("global_crew").getString("venue_name"),
-//            mainObject.getJSONObject("global_crew").getString("venue_capacity"),
-//            mainObject.getJSONObject("global_crew").getString("staff_manager"),
-//            mainObject.getJSONObject("global_crew").getString("corporate_owner"),
-//            mainObject.getJSONObject("global_crew").getString("corporate_chairman"),
-//
-//        )
-//        Log.d("Volley", "Great! ${item.name}")
-//    }
 
 
 }
