@@ -36,7 +36,7 @@ class PlayersFragment : Fragment() {
     private fun initRcView() = with(binding) {
         model.liveDataList.observe(viewLifecycleOwner){
            val list = it[0].players
-            Log.d("Recycler Test", it[1].players.toString())
+            Log.d("Recycler Test", it[0].global_crew.name)
 
             rv.layoutManager = LinearLayoutManager(activity)
             adapter = PlayersAdapter()

@@ -3,22 +3,22 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@color/tint"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
-
+    tools:context=".MainActivity">
 
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="250dp"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
         android:layout_gravity="start"
-        android:background="@color/text_tint">
+        android:background="@color/text_tint"
+        android:fitsSystemWindows="true"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -58,17 +58,14 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rcDrawer"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:padding="10dp"
-                        />
+                        tools:listitem="@layout/drawer_item" />
 
                 </LinearLayout>
 
 
             </ScrollView>
-
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -81,95 +78,108 @@
         android:paddingLeft="1dp"
         android:paddingRight="1dp">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/tint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:tabIndicatorColor="@color/color_orange"
-        app:tabMode="auto"
-        app:tabTextColor="@color/text_tint">
-
-        <com.google.android.material.tabs.TabItem
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/home" />
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/tint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:tabIndicatorColor="@color/color_orange"
+            app:tabMode="auto"
+            app:tabTextColor="@color/text_tint">
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/fixtires" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/results" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/league" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/players" />
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/tint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="5dp"
-            android:layout_margin="2dp">
-
-            <TextView
-                android:id="@+id/globalName"
+            <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="TextView"
-                android:textColor="@color/text_tint"
-                android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="@+id/globalLogo"
-                app:layout_constraintStart_toEndOf="@+id/globalLogo"
-                app:layout_constraintTop_toTopOf="@+id/globalLogo" />
+                android:text="@string/home" />
 
-            <ImageView
-                android:id="@+id/globalLogo"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="16dp"
-                android:scaleType="centerInside"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fixtires" />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/placeHolder"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout">
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/results" />
 
-    </androidx.viewpager2.widget.ViewPager2>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/league" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/players" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/tint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/globalName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="TextView"
+                    android:textColor="@color/text_tint"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/globalLogo"
+                    app:layout_constraintStart_toEndOf="@+id/globalLogo"
+                    app:layout_constraintTop_toTopOf="@+id/globalLogo" />
+
+                <ImageView
+                    android:id="@+id/globalLogo"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imBurgerButton"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.611" />
+
+                <ImageButton
+                    android:id="@+id/imBurgerButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@color/tint"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/baseline_dehaze_24" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/placeHolder"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout">
+
+        </androidx.viewpager2.widget.ViewPager2>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
