@@ -2,5 +2,6 @@ package com.example.infocrew.data.json
 
 data class ItemsViewModel (
     val name: String,
-    val logo: String
+    val logo: String,
+    val position: Int
         )

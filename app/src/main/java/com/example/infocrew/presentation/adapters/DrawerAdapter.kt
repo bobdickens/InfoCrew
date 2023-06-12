@@ -3,11 +3,10 @@ package com.example.infocrew.presentation.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.infocrew.R
 import com.example.infocrew.data.json.ItemsViewModel
+import com.example.infocrew.databinding.DrawerItemBinding
 import com.squareup.picasso.Picasso
 
 //class DrawerAdapter :  ListAdapter<String, DrawerAdapter.Holder>(Comparator()){
@@ -42,24 +41,35 @@ import com.squareup.picasso.Picasso
 //    }
 //}
 
-class DrawerAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adapter<DrawerAdapter.ViewHolder>() {
+
+interface OnClick {
+    fun click(item: ItemsViewModel)
+}
+
+class DrawerAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adapter<DrawerAdapter.ViewHolder>(), View.OnClickListener {
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        // inflates the card_view_design view
-        // that is used to hold list item
+    val inflater = LayoutInflater.from(parent.context)
+        val binding = DrawerItemBinding.inflate(inflater, parent, false)
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.drawer_item, parent, false)
+
 
         return ViewHolder(view)
     }
 
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = mList[position]
+        holder.itemView.tag = item
 
-        val ItemsViewModel = mList[position]
-        holder.textView.text = ItemsViewModel.name
-        Picasso.get().load(ItemsViewModel.logo).into(holder.imageView)
+    holder.bind(mList[position])
+
+
+
+       // holder.imageView.
+
     }
 
     override fun getItemCount(): Int {
@@ -68,7 +78,20 @@ class DrawerAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
 
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.iv_logo)
-        val textView: TextView = itemView.findViewById(R.id.tv_name_drawer)
+        val binding = DrawerItemBinding.bind(itemView)
+
+        fun bind (item: ItemsViewModel) = with(binding){
+            Picasso.get().load(item.logo).into(ivLogo)
+            tvNameDrawer.text = item.name
+
+
+        }
+
     }
+
+    override fun onClick(v: View) {
+        val item = v.tag as ItemsViewModel
+    }
+
+
 }
