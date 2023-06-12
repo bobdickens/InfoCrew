@@ -13,6 +13,7 @@ import com.example.infocrew.databinding.FragmentResultsBinding
 import com.example.infocrew.presentation.adapters.PlayersAdapter
 import com.example.infocrew.presentation.adapters.ResultsAdapter
 import com.example.infocrew.presentation.domain.MainViewModel
+import kotlin.math.absoluteValue
 
 class ResultsFragment : Fragment() {
     private lateinit var binding: FragmentResultsBinding
@@ -35,8 +36,7 @@ class ResultsFragment : Fragment() {
 
     private fun initRcView() = with(binding) {
         model.liveDataList.observe(viewLifecycleOwner){
-            val list = it[0].results
-            Log.d("Recycler Test", it[0].results.toString())
+            val list = it[model.index.value!!.absoluteValue].results
 
             rv.layoutManager = LinearLayoutManager(activity)
             adapter = ResultsAdapter()

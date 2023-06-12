@@ -15,6 +15,7 @@ import com.example.infocrew.databinding.FragmentFixturesBinding
 import com.example.infocrew.presentation.adapters.FixturesAdapter
 import com.example.infocrew.presentation.adapters.PlayersAdapter
 import com.example.infocrew.presentation.domain.MainViewModel
+import kotlin.math.absoluteValue
 
 class FixturesFragment : Fragment() {
     private lateinit var binding: FragmentFixturesBinding
@@ -36,11 +37,7 @@ class FixturesFragment : Fragment() {
 
     private fun initRcView() = with(binding) {
         model.liveDataList.observe(viewLifecycleOwner){
-            val list = it[0].fixtures
-            Log.d("Recycler Test Fixtures", it[0].fixtures.toString())
-            val list2 = listOf(
-                Fixture("test", "pizdex", "Nahuo", "Zalupa")
-            )
+            val list = it[model.index.value!!.absoluteValue].fixtures
 
             rv.layoutManager = LinearLayoutManager(activity)
             adapter = FixturesAdapter()

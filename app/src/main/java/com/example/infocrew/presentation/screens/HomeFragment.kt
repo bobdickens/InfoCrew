@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.infocrew.R
 import com.example.infocrew.databinding.FragmentHomeBinding
 import com.example.infocrew.presentation.domain.MainViewModel
+import kotlin.math.absoluteValue
 
 class HomeFragment : Fragment() {
 lateinit var binding: FragmentHomeBinding
@@ -25,7 +26,7 @@ private val model: MainViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val index = 0
+        val index = model.index.value!!.absoluteValue
         bind(index)
 
 

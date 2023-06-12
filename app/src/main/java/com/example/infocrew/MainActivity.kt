@@ -6,16 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.navigation.NavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.infocrew.data.json.GlobalCrew
-import com.example.infocrew.data.json.ItemsViewModel
 import com.example.infocrew.data.json.league.League
 import com.example.infocrew.presentation.adapters.VpAdapter
 import com.example.infocrew.databinding.ActivityMainBinding
-import com.example.infocrew.presentation.adapters.AlternativeDrawerAdapter
-import com.example.infocrew.presentation.adapters.DrawerAdapter
-import com.example.infocrew.presentation.adapters.OnClickItem
 import com.example.infocrew.presentation.domain.MainViewModel
 import com.example.infocrew.presentation.domain.retrofit2.ApiInterface
 import com.example.infocrew.presentation.screens.FixturesFragment
@@ -29,15 +23,16 @@ import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.math.absoluteValue
 
 const val APP_PREF = "APP_PREF"
 const val PREF_KEY = "PREF_KEY"
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val model: MainViewModel by viewModels()
-    private lateinit var adapter: DrawerAdapter
-    private lateinit var alternativeDrawerAdapter: AlternativeDrawerAdapter
-    lateinit var navController: NavController
+    //private lateinit var adapter: DrawerAdapter
+   // private lateinit var alternativeDrawerAdapter: AlternativeDrawerAdapter
+
 
     private lateinit var pref: SharedPreferences
 
@@ -57,16 +52,36 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
         pref = getSharedPreferences(APP_PREF, MODE_PRIVATE)
+
+        model.index.observe(this@MainActivity){
+            pref.edit().putInt(PREF_KEY, it).apply()
+        }
+
+//        model.currentIndex.observe(this@MainActivity){
+//                pref.edit().putInt(PREF_KEY, it).apply()
+//            Log.d("Absolute2", it.toString())
+//
+//        }
+        //pref.edit().putInt(PREF_KEY, 0).apply()
+
+
 
         tabFunc()
         responseCrew()
         responseLeague()
         bind()
         burgerListener()
-        bindOfDrawer()
+
+        val index = pref.getInt(PREF_KEY, 0)
+        model.index.value = index
+
+        binding.button.setOnClickListener{
+            finish()
+            startActivity(intent)
+            overridePendingTransition(0, 1)
+            Toast.makeText(this, "Restarting ${pref.getInt(PREF_KEY, 0)}", Toast.LENGTH_LONG).show()
+        }
 
         //navController = Navigation.findNavController(this, R.id.drawer)
 //
@@ -100,7 +115,7 @@ class MainActivity : AppCompatActivity() {
         val apiInterface = ApiInterface.create().getCrew()
         apiInterface.enqueue( object : Callback<GlobalCrew> {
             override fun onResponse(call: Call<GlobalCrew>, response: Response<GlobalCrew>) {
-                if(response.body() != null)
+                if (response.body() != null)
                     model.liveDataList.value = response.body()
                     Log.d("Retrofit", "${response.body()}")
             }
@@ -118,32 +133,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun bind()= with(binding){
        model.liveDataList.observe(this@MainActivity){
-           globalName.text = it[0].global_crew.name
-           Picasso.get().load(it[0].global_crew.logo).into(globalLogo)
+//           val index = model.index.value!!.absoluteValue
+           val index = model.index.value?.absoluteValue
+           Log.d("Absolut", model.index.value!!.absoluteValue.toString())
+           globalName.text = it[index!!].global_crew.name
+           Picasso.get().load(it[index].global_crew.logo).into(globalLogo)
        }
     }
-
-    private fun bindOfDrawer() {
-        val list = arrayListOf<ItemsViewModel>()
-        model.liveDataList.observe(this@MainActivity){
-
-            val test = it
-            for (index in test.indices) {
-                //list += test[index].global_crew.name
-                list.add(ItemsViewModel(test[index].global_crew.name, test[index].global_crew.logo, index))
-            }
-            Log.d("Test List", list.toString())
-            binding.rcDrawer.layoutManager = LinearLayoutManager(this)
-            alternativeDrawerAdapter = AlternativeDrawerAdapter(list, object : OnClickItem {
-                override fun click(item: ItemsViewModel) {
-                            Toast.makeText(this@MainActivity, "Работает!", Toast.LENGTH_LONG).show()
-                            Log.d("Alternative", "Working")
-                }
-            })
-            binding.rcDrawer.adapter = alternativeDrawerAdapter
-
-
-        }
-    }
-
 }

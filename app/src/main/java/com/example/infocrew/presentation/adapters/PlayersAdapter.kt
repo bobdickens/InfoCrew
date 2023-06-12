@@ -1,5 +1,6 @@
 package com.example.infocrew.presentation.adapters
 
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import com.example.infocrew.databinding.PlayersItemBinding
 import com.squareup.picasso.Picasso
 
 class PlayersAdapter:  ListAdapter<PlayerX, PlayersAdapter.Holder>(Comparator()){
+    private lateinit var pref: SharedPreferences
     class Holder(view: View) : RecyclerView.ViewHolder(view){
         val binding = PlayersItemBinding.bind(view)
 
