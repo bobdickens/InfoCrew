@@ -1,5 +1,8 @@
 package com.example.infocrew.data.json
 
+import androidx.annotation.Keep
+
+@Keep
 data class GlobalCrewX(
     val corporate_chairman: String,
     val corporate_owner: String,

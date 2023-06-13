@@ -1,5 +1,8 @@
 package com.example.infocrew.data.json
 
+import android.support.annotation.Keep
+
+@Keep
 data class Result(
     val current_1: String,
     val current_2: String,

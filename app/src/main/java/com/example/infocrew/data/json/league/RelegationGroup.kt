@@ -1,5 +1,8 @@
 package com.example.infocrew.data.json.league
 
+import androidx.annotation.Keep
+
+@Keep
 data class RelegationGroup(
     val d: String,
     val l: String,

@@ -76,19 +76,6 @@ class MainActivity : AppCompatActivity() {
         val index = pref.getInt(PREF_KEY, 0)
         model.index.value = index
 
-        binding.button.setOnClickListener{
-            finish()
-            startActivity(intent)
-            overridePendingTransition(0, 1)
-            Toast.makeText(this, "Restarting ${pref.getInt(PREF_KEY, 0)}", Toast.LENGTH_LONG).show()
-        }
-
-        //navController = Navigation.findNavController(this, R.id.drawer)
-//
-//        val data = ArrayList<ItemsViewModel>()
-//        for (i in 1..20) {
-//            data.add(ItemsViewModel("Item " + i))
-//        }
     }
 
     private fun burgerListener(){
@@ -133,7 +120,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun bind()= with(binding){
        model.liveDataList.observe(this@MainActivity){
-//           val index = model.index.value!!.absoluteValue
            val index = model.index.value?.absoluteValue
            Log.d("Absolut", model.index.value!!.absoluteValue.toString())
            globalName.text = it[index!!].global_crew.name

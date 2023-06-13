@@ -1,8 +1,11 @@
 package com.example.infocrew.presentation.adapters
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.toColor
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -23,10 +26,9 @@ class ResultsAdapter:  ListAdapter<Result, ResultsAdapter.Holder>(Comparator()){
             tvDate.text = item.date
             tvCurrent1.text = item.current_1
             tvCurrent2.text = item.current_2
-//            namePlayers.text = item.name
-//            playerRole.text = item.role
-//            playerArea.text = item.nation
-//            Picasso.get().load(item.face).into(imageFace)
+            if(item.win == "false") { tvCurrent1.setTextColor(Color.parseColor("#FF0000"))
+                tvCurrent2.setTextColor(Color.parseColor("#FF0000"))
+            }
         }
     }
 

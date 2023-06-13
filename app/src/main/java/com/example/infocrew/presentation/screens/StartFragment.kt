@@ -58,14 +58,8 @@ class StartFragment : Fragment() {
 
             alternativeDrawerAdapter = AlternativeDrawerAdapter(list, object : OnClickItem {
                 override fun click(item: ItemsViewModel) {
-//                    val sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE) ?: return
-//                    with (sharedPref.edit()) {
-//                        putInt(PREF_KEY, item.position)
-//                        commit()
- //                   }
-                    Toast.makeText(activity, "${item.position}", Toast.LENGTH_LONG).show()
+
                     model.index.value = item.position
-                   // model.currentIndex.value = item.position
                        val intent = requireActivity().intent
                        requireActivity().finish()
                        requireActivity().startActivity(intent)
