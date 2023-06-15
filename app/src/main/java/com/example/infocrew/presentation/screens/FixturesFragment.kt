@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Keep
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.infocrew.R
@@ -16,7 +17,7 @@ import com.example.infocrew.presentation.adapters.FixturesAdapter
 import com.example.infocrew.presentation.adapters.PlayersAdapter
 import com.example.infocrew.presentation.domain.MainViewModel
 import kotlin.math.absoluteValue
-
+@Keep
 class FixturesFragment : Fragment() {
     private lateinit var binding: FragmentFixturesBinding
     private val model: MainViewModel by activityViewModels()

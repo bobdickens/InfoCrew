@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Keep
 import androidx.core.graphics.toColor
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -15,7 +16,7 @@ import com.example.infocrew.data.json.Result
 import com.example.infocrew.databinding.PlayersItemBinding
 import com.example.infocrew.databinding.ResultItemBinding
 import com.squareup.picasso.Picasso
-
+@Keep
 class ResultsAdapter:  ListAdapter<Result, ResultsAdapter.Holder>(Comparator()){
     class Holder(view: View) : RecyclerView.ViewHolder(view){
         val binding = ResultItemBinding.bind(view)

@@ -4,12 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.annotation.Keep
 import androidx.recyclerview.widget.RecyclerView
 import com.example.infocrew.R
 import com.example.infocrew.data.json.ItemsViewModel
 import com.example.infocrew.databinding.DrawerItemBinding
 import com.squareup.picasso.Picasso
-
+@Keep
 interface OnClickItem {
     fun click(item: ItemsViewModel)
 }

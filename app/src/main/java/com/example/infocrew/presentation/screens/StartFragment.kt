@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.Keep
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.infocrew.APP_PREF
@@ -18,7 +19,7 @@ import com.example.infocrew.databinding.FragmentStartBinding
 import com.example.infocrew.presentation.adapters.AlternativeDrawerAdapter
 import com.example.infocrew.presentation.adapters.OnClickItem
 import com.example.infocrew.presentation.domain.MainViewModel
-
+@Keep
 class StartFragment : Fragment() {
     private lateinit var binding: FragmentStartBinding
     private lateinit var alternativeDrawerAdapter: AlternativeDrawerAdapter

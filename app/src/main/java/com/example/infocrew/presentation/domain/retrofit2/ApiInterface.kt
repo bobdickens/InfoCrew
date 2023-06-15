@@ -1,12 +1,13 @@
 package com.example.infocrew.presentation.domain.retrofit2
 
+import androidx.annotation.Keep
 import com.example.infocrew.data.json.GlobalCrew
 import com.example.infocrew.data.json.league.League
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-
+@Keep
 interface ApiInterface {
 
     @GET("crew.json")

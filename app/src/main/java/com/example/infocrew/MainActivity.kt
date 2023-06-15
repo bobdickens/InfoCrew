@@ -4,8 +4,8 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.annotation.Keep
 import com.example.infocrew.data.json.GlobalCrew
 import com.example.infocrew.data.json.league.League
 import com.example.infocrew.presentation.adapters.VpAdapter
@@ -24,15 +24,12 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import kotlin.math.absoluteValue
-
+@Keep
 const val APP_PREF = "APP_PREF"
 const val PREF_KEY = "PREF_KEY"
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val model: MainViewModel by viewModels()
-    //private lateinit var adapter: DrawerAdapter
-   // private lateinit var alternativeDrawerAdapter: AlternativeDrawerAdapter
-
 
     private lateinit var pref: SharedPreferences
 
@@ -58,12 +55,6 @@ class MainActivity : AppCompatActivity() {
             pref.edit().putInt(PREF_KEY, it).apply()
         }
 
-//        model.currentIndex.observe(this@MainActivity){
-//                pref.edit().putInt(PREF_KEY, it).apply()
-//            Log.d("Absolute2", it.toString())
-//
-//        }
-        //pref.edit().putInt(PREF_KEY, 0).apply()
 
 
 
@@ -98,13 +89,14 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
+    @Keep
     private fun responseCrew(){
         val apiInterface = ApiInterface.create().getCrew()
         apiInterface.enqueue( object : Callback<GlobalCrew> {
             override fun onResponse(call: Call<GlobalCrew>, response: Response<GlobalCrew>) {
+
                 if (response.body() != null)
                     model.liveDataList.value = response.body()
-                    Log.d("Retrofit", "${response.body()}")
             }
             override fun onFailure(call: Call<GlobalCrew>, t: Throwable) {
             }
@@ -121,7 +113,6 @@ class MainActivity : AppCompatActivity() {
     private fun bind()= with(binding){
        model.liveDataList.observe(this@MainActivity){
            val index = model.index.value?.absoluteValue
-           Log.d("Absolut", model.index.value!!.absoluteValue.toString())
            globalName.text = it[index!!].global_crew.name
            Picasso.get().load(it[index].global_crew.logo).into(globalLogo)
        }

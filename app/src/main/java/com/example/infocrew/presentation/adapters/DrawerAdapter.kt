@@ -3,45 +3,14 @@ package com.example.infocrew.presentation.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Keep
 import androidx.recyclerview.widget.RecyclerView
 import com.example.infocrew.R
 import com.example.infocrew.data.json.ItemsViewModel
 import com.example.infocrew.databinding.DrawerItemBinding
 import com.squareup.picasso.Picasso
 
-//class DrawerAdapter :  ListAdapter<String, DrawerAdapter.Holder>(Comparator()){
-//    class Holder(view: View) : RecyclerView.ViewHolder(view){
-//        val binding = DrawerItemBinding.bind(view)
-//
-//        fun bind (item: String) = with(binding){
-//            tvNameDrawer.text = item
-//        }
-//    }
-//
-//    class Comparator : DiffUtil.ItemCallback<String>(){
-//        override fun areItemsTheSame(oldItem:String, newItem: String): Boolean {
-//            return  oldItem == newItem
-//
-//        }
-//
-//        override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
-//            return oldItem == newItem
-//        }
-//
-//    }
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-//        val view = LayoutInflater.from(parent.context).inflate(R.layout.drawer_item, parent, false)
-//        return Holder(view)
-//    }
-//
-//    override fun onBindViewHolder(holder: Holder, position: Int) {
-//        holder.bind(getItem(position))
-//
-//    }
-//}
-
-
+@Keep
 interface OnClick {
     fun click(item: ItemsViewModel)
 }

@@ -1,6 +1,7 @@
 package com.example.infocrew.data.json
 
-import android.support.annotation.Keep
+import androidx.annotation.Keep
+
 
 @Keep
 data class Result(

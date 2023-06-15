@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.Keep
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +15,7 @@ import com.example.infocrew.data.json.league.Premiership
 import com.example.infocrew.data.json.league.RelegationGroup
 import com.example.infocrew.databinding.LeagueItemBinding
 import com.squareup.picasso.Picasso
-
+@Keep
 class ChampionshipAdapter: ListAdapter<ChampionshipGroup, ChampionshipAdapter.Holder>(Comparator()){
     class Holder(view: View) : RecyclerView.ViewHolder(view){
         val binding = LeagueItemBinding.bind(view)

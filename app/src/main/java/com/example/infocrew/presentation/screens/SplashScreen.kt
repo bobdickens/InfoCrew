@@ -6,9 +6,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
+import androidx.annotation.Keep
 import com.example.infocrew.MainActivity
 import com.example.infocrew.R
-
+@Keep
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

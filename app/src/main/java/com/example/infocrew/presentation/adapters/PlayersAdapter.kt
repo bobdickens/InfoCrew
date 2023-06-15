@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Keep
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +12,7 @@ import com.example.infocrew.R
 import com.example.infocrew.data.json.PlayerX
 import com.example.infocrew.databinding.PlayersItemBinding
 import com.squareup.picasso.Picasso
-
+@Keep
 class PlayersAdapter:  ListAdapter<PlayerX, PlayersAdapter.Holder>(Comparator()){
     private lateinit var pref: SharedPreferences
     class Holder(view: View) : RecyclerView.ViewHolder(view){

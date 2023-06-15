@@ -3,6 +3,7 @@ package com.example.infocrew.presentation.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Keep
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,7 @@ import com.example.infocrew.R
 import com.example.infocrew.data.json.Fixture
 import com.example.infocrew.databinding.FixturesItemBinding
 import com.squareup.picasso.Picasso
-
+@Keep
 class FixturesAdapter: ListAdapter<Fixture, FixturesAdapter.Holder>(Comparator()){
     class Holder(view: View) : RecyclerView.ViewHolder(view){
         val binding = FixturesItemBinding.bind(view)

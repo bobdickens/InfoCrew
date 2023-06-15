@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Keep
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.infocrew.databinding.FragmentLeagueBinding
@@ -12,7 +13,7 @@ import com.example.infocrew.presentation.adapters.ChampionshipAdapter
 import com.example.infocrew.presentation.adapters.PremiershipAdapter
 import com.example.infocrew.presentation.adapters.RelegationAdapter
 import com.example.infocrew.presentation.domain.MainViewModel
-
+@Keep
 class LeagueFragment : Fragment() {
     private lateinit var binding: FragmentLeagueBinding
     private lateinit var adapter: ChampionshipAdapter
